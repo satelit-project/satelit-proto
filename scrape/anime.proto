@@ -1,0 +1,102 @@
+syntax = "proto3";
+package scrape;
+
+// Anime episode
+message Episode {
+
+  // Type of an anime episode
+  enum Type {
+    REGULAR = 0;
+    SPECIAL = 1;
+  }
+
+  // Episode type
+  Type type = 1;
+
+  // Episode number
+  sint32 number = 2;
+
+  // Episode name
+  string name = 3;
+
+  // Episode duration in seconds
+  double duration = 4;
+
+  // Timestamp of the episode air date (unix time)
+  double air_date = 5;
+}
+
+// Anime title
+message Anime {
+
+  // External DB location
+  message Source {
+
+    // AniDB id. 0 if unknown
+    sint32 anidb_id = 1;
+
+    // MyAnimeList id. 0 if unknown
+    sint32 mal_id = 2;
+
+    // AnimeNewsNetwork id. 0 if unknown
+    sint32 ann_id = 3;
+  }
+
+  // Type of an anime title
+  enum Type {
+    UNKNOWN = 0;
+    TV_SERIES = 1;
+    OVA = 2;
+    ONA = 3;
+    MOVIE = 4;
+    SPECIAL = 5;
+  }
+
+  // Anime tag
+  message Tag {
+
+    // Tag id in external db
+    oneof source {
+      sint32 anidb_id = 10;
+    }
+
+    // Tag name
+    string name = 1;
+
+    // Tag description
+    string description = 2;
+  }
+
+  // Anime ids in external databases
+  Source source = 1;
+
+  // Anime type
+  Type type = 2;
+
+  // Canonical anime title in romaji
+  string title = 3;
+
+  // URL of the anime poster
+  string poster_url = 4;
+
+  // Number of the anime episodes
+  sint32 episodes_count = 5;
+
+  // Known anime episodes info
+  repeated Episode episodes = 6;
+
+  // Timestamp of the anime start air date (unix)
+  double start_date = 7;
+
+  // Timestamp of the anime end air date (unix)
+  double end_date = 8;
+
+  // Anime tags (same as genre in some external sources)
+  repeated Tag tags = 9;
+
+  // Anime rating
+  double rating = 10;
+
+  // Anime description
+  string description = 11;
+}

@@ -1,0 +1,39 @@
+syntax = "proto3";
+package scrape;
+
+import "scrape/anime.proto";
+
+// Represents a task for anime pages scraping
+message Task {
+
+  // External DB where an anime info resides
+  enum Source {
+    ANIDB = 0;
+  }
+
+  // Task id
+  string id = 1;
+
+  // Type of an anime info source to parse from
+  Source source = 2;
+
+  // Anime ids
+  repeated sint32 anime_ids = 3;
+}
+
+// Intermediate result of a parse task
+message TaskYield {
+
+  // ID of the related task
+  string task_id = 1;
+
+  // Parsed anime entities
+  repeated scrape.Anime anime = 2;
+}
+
+// Signals that a task has been finished
+message TaskFinish {
+
+  // ID of the related task
+  string task_id = 1;
+}
