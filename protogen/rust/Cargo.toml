@@ -1,0 +1,10 @@
+[package]
+name = "rust"
+version = "0.1.0"
+authors = ["Igor Nikitin <rabbitinspace@icloud.com>"]
+description = "Generates rust code for .proto files"
+edition = "2018"
+
+[dependencies]
+prost-build = "0.5.0"
+clap = "2.33.0"
