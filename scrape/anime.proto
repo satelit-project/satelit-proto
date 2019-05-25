@@ -1,5 +1,5 @@
 syntax = "proto3";
-package scrape;
+package scrape.anime;
 
 // Anime episode
 message Episode {

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package scrape;
+package scrape.task;
 
 import "scrape/anime.proto";
 
@@ -28,7 +28,7 @@ message TaskYield {
   string task_id = 1;
 
   // Parsed anime entities
-  repeated scrape.Anime anime = 2;
+  repeated scrape.anime.Anime anime = 2;
 }
 
 // Signals that a task has been finished
