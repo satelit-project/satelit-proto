@@ -13,8 +13,8 @@ fn main() -> Result<(), String> {
     match compile_protos(&protos, &[include]) {
         Ok(_) => {
             eprintln!(
-                "Compiled protos can be found at: {}",
-                option_env!("OUT_DIR").unwrap()
+                "Compiled protos can be found at: {:?}",
+                std::env::var_os("OUT_DIR").unwrap()
             );
             Ok(())
         }

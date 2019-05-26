@@ -5,7 +5,7 @@ require 'pathname'
 
 require_relative 'lib/args'
 require_relative 'lib/config'
-require_relative 'lib/lang_gen'
+require_relative 'lib/gen'
 
 options = parse_args
 if options[:project].nil? || options[:language].nil? || options[:out_dir].nil?
