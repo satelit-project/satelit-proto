@@ -6,8 +6,9 @@ message Episode {
 
   // Type of an anime episode
   enum Type {
-    REGULAR = 0;
-    SPECIAL = 1;
+    UNKNOWN = 0;
+    REGULAR = 1;
+    SPECIAL = 2;
   }
 
   // Episode type

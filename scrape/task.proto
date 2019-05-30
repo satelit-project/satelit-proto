@@ -8,7 +8,8 @@ message Task {
 
   // External DB where an anime info resides
   enum Source {
-    ANIDB = 0;
+    UNKNOWN = 0;
+    ANIDB = 1;
   }
 
   // Task ID
