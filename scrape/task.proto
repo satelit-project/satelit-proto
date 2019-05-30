@@ -18,8 +18,11 @@ message Task {
   // Type of an anime info source to parse from
   Source source = 2;
 
-  // Schedule IDs
+  // Schedule IDs for each anime ID
   repeated sint32 schedule_ids = 3;
+
+  // Anime ID's to scrape
+  repeated sint32 anime_ids = 4;
 }
 
 // Intermediate result of a parse task
