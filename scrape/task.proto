@@ -11,14 +11,14 @@ message Task {
     ANIDB = 0;
   }
 
-  // Task id
+  // Task ID
   string id = 1;
 
   // Type of an anime info source to parse from
   Source source = 2;
 
-  // Anime ids
-  repeated sint32 anime_ids = 3;
+  // Schedule IDs
+  repeated sint32 schedule_ids = 3;
 }
 
 // Intermediate result of a parse task
@@ -27,8 +27,11 @@ message TaskYield {
   // ID of the related task
   string task_id = 1;
 
-  // Parsed anime entities
-  repeated scrape.anime.Anime anime = 2;
+  // ID of the schedule
+  sint32 schedule_id = 2;
+
+  // Parsed anime entity
+  scrape.anime.Anime anime = 3;
 }
 
 // Signals that a task has been finished
