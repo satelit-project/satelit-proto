@@ -9,17 +9,23 @@ message ImportIntent {
     ANIDB = 0;
   }
 
+  // Intent ID
+  string id = 1;
+
   // Represents an external DB from where anime titles index should be imported
-  Source source = 1;
+  Source source = 2;
 
   // URL to send request with import result
-  string callback_url = 2;
+  string callback_url = 3;
 }
 
 message ImportIntentResult {
+  // Intent ID
+  string id = 1;
+
   // If import succeeded then `true`, `false` otherwise
-  bool succeeded = 1;
+  bool succeeded = 2;
 
   // Description of the error if import failed
-  string error_description = 2;
+  string error_description = 3;
 }
