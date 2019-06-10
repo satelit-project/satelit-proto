@@ -48,7 +48,9 @@ class ProjectImport
   end
 
   def protos
-    protos_for_pattern('scrape/**/*.proto')
+    result = protos_for_pattern('scraper/**/*.proto')
+    result << protos_for_pattern('scheduler/**/*.proto')
+    result
   end
 end
 
@@ -65,6 +67,23 @@ class ProjectScraper
   end
 
   def protos
-    protos_for_pattern('scrape/**/*.proto')
+    protos_for_pattern('scraper/**/*.proto')
+  end
+end
+
+# Configuration for `satelit-scheduler` project
+class ProjectScheduler
+  include Project
+
+  def self.name
+    'satelit-scheduler'
+  end
+
+  def initialize(import_path)
+    @import_path = import_path
+  end
+
+  def protos
+    protos_for_pattern('scheduler/**/*.proto')
   end
 end
