@@ -31,7 +31,7 @@ message ImportIntentResult {
   bool succeeded = 2;
 
   // IDs of anime titles that was not imported
-  repeated sint32 failed_ids = 3;
+  repeated sint32 skipped_ids = 3;
 
   // Description of the error if import failed
   string error_description = 4;
