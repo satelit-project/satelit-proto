@@ -30,6 +30,9 @@ def config_for_project(project, import_path)
   when ProjectScraper.name
     ProjectScraper.new(import_path)
 
+  when ProjectCLI.name
+    ProjectCLI.new(import_path)
+
   else
     raise "Project #{project} is not supported"
   end
@@ -85,5 +88,22 @@ class ProjectScheduler
 
   def protos
     protos_for_pattern('scheduler/**/*.proto')
+  end
+end
+
+# Configuration for `satelit-cli` project
+class ProjectCLI
+  include Project
+
+  def self.name
+    'satelit-cli'
+  end
+
+  def initialize(import_path)
+    @import_path = import_path
+  end
+
+  def protos
+    ProjectImport.new(@import_path).protos
   end
 end
