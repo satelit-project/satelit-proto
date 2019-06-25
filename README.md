@@ -6,7 +6,7 @@ Proto files for all **Satelit** projects and sources generator.
  
 - Protobuf (see [prototool.yaml](prototool.yaml) for version)
 - Ruby (see [.ruby-version](.ruby-version) for version)
-- Rust (latest `stable`)
+- Rust (latest `stable` and `nightly`)
 
 You may optionally install Uber's [`prototool`](https://github.com/uber/prototool) tool to compile and lint proto files locally.
  
