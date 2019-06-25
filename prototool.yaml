@@ -1,0 +1,6 @@
+protoc:
+  version: 3.7.1
+lint:
+  group: google
+excludes:
+  - protogen

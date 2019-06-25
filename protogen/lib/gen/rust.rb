@@ -2,7 +2,7 @@
 
 require 'fileutils'
 
-def rust_gen(protos, root_path, out_path)
+def rust_gen(protos, root_path, out_path, extra_args)
   project_path = Pathname.new(root_path) + 'protogen/rust'
   proto_args = protos.map { |p| ['--proto', p] }.flatten
   tmp_out = tmp_dir(out_path)
@@ -10,7 +10,7 @@ def rust_gen(protos, root_path, out_path)
   Dir.chdir(project_path) do
     system('cargo', 'build', '--release')
     system({ 'OUT_DIR' => tmp_out.to_s }, 'cargo', 'run', '--release', '--',
-           '--include-path', root_path.to_s, *proto_args)
+           '--include-path', root_path.to_s, *proto_args, *extra_args)
   end
 
   modularize_rust(tmp_out)

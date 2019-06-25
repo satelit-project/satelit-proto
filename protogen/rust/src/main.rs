@@ -1,6 +1,6 @@
 use clap::{crate_authors, crate_description, crate_version};
 use clap::{App, Arg};
-use prost_build::compile_protos;
+use prost_build::Config;
 
 use std::error::Error;
 use std::path::Path;
@@ -9,17 +9,15 @@ fn main() -> Result<(), String> {
     let matches = build_app().get_matches();
     let protos: Vec<&str> = matches.values_of("proto").unwrap().collect();
     let include = matches.value_of("include-path").unwrap();
+    let with_serde: bool = matches.value_of("with-serde").unwrap().parse().unwrap();
 
-    match compile_protos(&protos, &[include]) {
-        Ok(_) => {
-            eprintln!(
-                "Compiled protos can be found at: {:?}",
-                std::env::var_os("OUT_DIR").unwrap()
-            );
-            Ok(())
-        }
-        Err(e) => Err(e.description().to_owned()),
+    let mut config = Config::new();
+    if with_serde == true {
+        config.type_attribute(".", "#[derive(serde::Serialize)]");
+        config.type_attribute(".", "#[derive(serde::Deserialize)]");
     }
+
+    config.compile_protos(&protos, &[include]).map_err(|e| e.description().to_owned())
 }
 
 /// Builds configured Clap's `App` instance
@@ -46,6 +44,16 @@ fn build_app() -> App<'static, 'static> {
                 .number_of_values(1)
                 .required(true)
                 .validator(check_include_path),
+        )
+        .arg(
+            Arg::with_name("with-serde")
+                .long("with-serde")
+                .help("Derives Serde's Serialize and Deserialize traits")
+                .takes_value(true)
+                .number_of_values(1)
+                .default_value("false")
+                .possible_value("true")
+                .possible_value("false")
         )
 }
 

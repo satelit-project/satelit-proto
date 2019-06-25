@@ -1,6 +1,10 @@
+# Common
+.DS_Store
+
 # IntelliJ
 .idea
-protogen/*.iml
+*.iml
+protogen/**/*.iml
 
 # Rust
 protogen/rust/target

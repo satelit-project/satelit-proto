@@ -23,4 +23,4 @@ root_path = Pathname.new(__dir__) + '..'
 config = config_for_project(options[:project], root_path)
 
 generator = generator_for_lang(options[:language])
-generator.call(config.protos, root_path, out)
+generator.call(config.protos, root_path, out, options[:extra])
