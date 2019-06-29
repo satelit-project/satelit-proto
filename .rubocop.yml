@@ -1,0 +1,9 @@
+AllCops:
+  Exclude:
+    - 'protogen/lib/gen/rust/**/*'
+
+Metrics/MethodLength:
+  Max: 60
+
+Metrics/AbcSize:
+  Max: 25

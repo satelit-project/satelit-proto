@@ -25,7 +25,7 @@ def make_parser(options)
 
       This is a facade for underlying sources generators. It looks for a specific set of '.proto' files for each
       project and passes it to a generator for specified language. You can pass additional arguments to a generator
-      by specifying them after ' -- '. 
+      by specifying them after ' -- '.
 
       NOTE: You should NOT override paths to '.proto' files or include directory in generators itself!
 
