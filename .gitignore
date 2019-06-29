@@ -7,4 +7,4 @@
 protogen/**/*.iml
 
 # Rust
-protogen/rust/target
+protogen/lib/gen/rust/target

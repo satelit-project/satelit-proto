@@ -3,7 +3,7 @@
 require 'fileutils'
 
 def rust_gen(protos, root_path, out_path, extra_args)
-  project_path = Pathname.new(root_path) + 'protogen/rust'
+  project_path = Pathname.new(root_path) + 'protogen/lib/gen/rust'
   proto_args = protos.map { |p| ['--proto', p] }.flatten
   tmp_out = tmp_dir(out_path)
 
