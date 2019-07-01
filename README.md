@@ -22,3 +22,4 @@ To generate sources for a specific project run `protogen.rb`:
 
 - Enforce `protoc` version
 - Compile and lint on CI
+- Enforce lints on CI to ensure all project uses latest protos 
