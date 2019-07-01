@@ -33,14 +33,14 @@ message Anime {
   // External DB location
   message Source {
 
-    // AniDB id. 0 if unknown
-    sint32 anidb_id = 1;
+    // AniDB id
+    repeated sint32 anidb_id = 1;
 
-    // MyAnimeList id. 0 if unknown
-    sint32 mal_id = 2;
+    // MyAnimeList id
+    repeated sint32 mal_id = 2;
 
-    // AnimeNewsNetwork id. 0 if unknown
-    sint32 ann_id = 3;
+    // AnimeNewsNetwork id
+    repeated sint32 ann_id = 3;
   }
 
   // Type of an anime title
