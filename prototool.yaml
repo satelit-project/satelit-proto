@@ -25,4 +25,5 @@ generate:
 
     - name: rust
       output: ../satelit-cli/src/proto
+      flags: serde
       path: plugins/bin/protoc-gen-rust
