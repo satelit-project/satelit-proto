@@ -6,5 +6,6 @@
 *.iml
 protogen/**/*.iml
 
-# Rust
-protogen/lib/gen/rust/target
+# Cargo
+plugins/bin
+plugins/.crates.toml
