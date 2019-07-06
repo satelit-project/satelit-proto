@@ -10,7 +10,7 @@ excludes:
 
 generate:
   go_options:
-    import_path: satelit-project/scraper
+    import_path: satelit-project/satelit-proto
 
   plugins:
     - name: go
