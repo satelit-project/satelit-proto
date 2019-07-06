@@ -1,6 +1,28 @@
 protoc:
   version: 3.7.1
+
 lint:
   group: google
+
 excludes:
-  - protogen
+  - plugins
+  - .idea
+
+generate:
+  go_options:
+    import_path: satelit-project/scraper
+
+  plugins:
+    - name: go
+      type: go
+      flags: plugins=grpc
+      output: ../satelit-scraper/proto
+      path: plugins/bin/protoc-gen-go
+
+    - name: rust
+      output: ../satelit-import/src/proto
+      path: plugins/bin/protoc-gen-rust
+
+    - name: rust
+      output: ../satelit-cli/src/proto
+      path: plugins/bin/protoc-gen-rust

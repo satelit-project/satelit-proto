@@ -1,5 +1,5 @@
 syntax = "proto3";
-package scheduler.intent;
+package scheduler;
 
 // Asks to import anime titles index and schedule new titles for scraping
 message ImportIntent {

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package scraper.task;
+package scraper;
 
 import "scraper/anime.proto";
 
@@ -34,7 +34,7 @@ message TaskYield {
   sint32 schedule_id = 2;
 
   // Parsed anime entity
-  scraper.anime.Anime anime = 3;
+  scraper.Anime anime = 3;
 }
 
 // Signals that a task has been finished
