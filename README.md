@@ -4,22 +4,15 @@ Proto files for all **Satelit** projects and sources generator.
 
 ## Dependencies
 
-- Protobuf (see [prototool.yaml](prototool.yaml) for version)
-- Ruby (see [.ruby-version](.ruby-version) for version)
-- Rust (latest `stable` and `nightly`)
+- [`prototool`](https://github.com/uber/prototool)
+- Rust (latest `stable`)
 
-Don't forget to `bundle install`
+## Usage
 
-You may optionally install Uber's [`prototool`](https://github.com/uber/prototool) tool to compile and lint proto files locally.
-
-## Generators
-
-To generate sources for a specific project run `protogen.rb`:
-
-`protogen/protogen.rb --help`
+- Install Protobuf by running `prototool cache update`
+- TODO: gen
 
 ## TODO
 
-- Enforce `protoc` version
 - Compile and lint on CI
 - Enforce lints on CI to ensure all project uses latest protos 
