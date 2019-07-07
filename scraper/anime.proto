@@ -24,7 +24,7 @@ message Episode {
   double duration = 4;
 
   // Timestamp of the episode air date (unix time)
-  double air_date = 5;
+  sint64 air_date = 5;
 }
 
 // Anime title
@@ -87,10 +87,10 @@ message Anime {
   repeated Episode episodes = 6;
 
   // Timestamp of the anime start air date (unix)
-  double start_date = 7;
+  sint64 start_date = 7;
 
   // Timestamp of the anime end air date (unix)
-  double end_date = 8;
+  sint64 end_date = 8;
 
   // Anime tags (same as genre in some external sources)
   repeated Tag tags = 9;
