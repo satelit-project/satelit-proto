@@ -1,45 +1,38 @@
 syntax = "proto3";
+
 package scraper;
 
 import "scraper/anime.proto";
 
 // Represents a task for anime pages scraping
 message Task {
-
   // External DB where an anime info resides
   enum Source {
-    ANIDB = 0;
+    UNKNOWN = 0;
+    ANIDB = 1;
   }
-
   // Task ID
   string id = 1;
-
   // External DB from where to scrape info
   Source source = 2;
-
   // Schedule IDs for each anime ID
   repeated sint32 schedule_ids = 3;
-
   // Anime ID's to scrape
   repeated sint32 anime_ids = 4;
 }
 
 // Intermediate result of a parse task
 message TaskYield {
-
   // ID of the related task
   string task_id = 1;
-
   // ID of the schedule
   sint32 schedule_id = 2;
-
   // Parsed anime entity
   scraper.Anime anime = 3;
 }
 
 // Signals that a task has been finished
 message TaskFinish {
-
   // ID of the related task
   string task_id = 1;
 }

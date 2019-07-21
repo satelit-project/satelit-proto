@@ -1,38 +1,31 @@
 syntax = "proto3";
+
 package scheduler;
 
 // Asks to import anime titles index and schedule new titles for scraping
 message ImportIntent {
-
   // External DB
   enum Source {
-    ANIDB = 0;
+    UNKNOWN = 0;
+    ANIDB = 1;
   }
-
   // Intent ID
   string id = 1;
-
   // Represents an external DB from where anime titles index should be imported
   Source source = 2;
-
   // Identifiers of anime titles that should be re-imported
   repeated sint32 reimport_ids = 3;
-
   // URL to send request with import result
   string callback_url = 4;
 }
 
 message ImportIntentResult {
-
   // Intent ID
   string id = 1;
-
   // If import succeeded then `true`, `false` otherwise
   bool succeeded = 2;
-
   // IDs of anime titles that was not imported
   repeated sint32 skipped_ids = 3;
-
   // Description of the error if import failed
   string error_description = 4;
 }

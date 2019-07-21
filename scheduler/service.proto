@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scheduler;
 
 import "google/protobuf/empty.proto";
@@ -9,8 +10,8 @@ import "scheduler/intent.proto";
 // 'Importer' should implement the service and start importing a raw data when requested
 // such as AniDB database dump that will be used to produce scraping tasks.
 service ImportService {
-    // Begins import process of raw data
-    rpc StartImport (ImportIntent) returns (google.protobuf.Empty);
+  // Begins import process of raw data
+  rpc StartImport(ImportIntent) returns (google.protobuf.Empty);
 }
 
 // A service that receives callbacks from `ImportService` about import progress
@@ -18,6 +19,6 @@ service ImportService {
 // 'Importer' will call those methods to report import progress and it's expected to
 // be implemented by 'Scheduler'.
 service ImportHooksService {
-    // Reports that import has finished
-    rpc ImportFinished (ImportIntentResult) returns (google.protobuf.Empty);
+  // Reports that import has finished
+  rpc ImportFinished(ImportIntentResult) returns (google.protobuf.Empty);
 }
