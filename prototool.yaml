@@ -21,10 +21,10 @@ generate:
 
     - name: rust
       output: ../satelit-import/src/proto
-      flags: grpc-server,no-flat-modules
+      flags: grpc,no-flat-modules
       path: plugins/bin/protoc-gen-rust
 
     - name: rust
       output: ../satelit-cli/src/proto
-      flags: grpc-client,no-flat-modules
+      flags: grpc,no-flat-modules
       path: plugins/bin/protoc-gen-rust

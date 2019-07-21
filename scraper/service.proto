@@ -1,0 +1,27 @@
+syntax = "proto3";
+package scraper;
+
+import "google/protobuf/empty.proto";
+import "scraper/task.proto";
+
+// A service to start scraping process
+//
+// 'Scraper' should implement a server side of the service and
+// something from the outside needs to trigger scraping process.
+service ScraperService {
+    // Starts scraping process
+    rpc StartScraping (Task) returns (google.protobuf.Empty);
+}
+
+// A service that receives callbacks from `ScraperService` about scraping progress
+//
+// 'Scraper' will call those methods to report scraping progress
+// and it's expected to be implemented by 'Importer'.
+service ScraperHooksService {
+    // Reports that an atomic piece of data has been scraped
+    rpc YieldResult (TaskYield) returns (google.protobuf.Empty);
+
+    // Reports that all requested data has been scraped and the
+    // scraping process has finished
+    rpc CompleteTask (TaskFinish) returns (google.protobuf.Empty);
+}
