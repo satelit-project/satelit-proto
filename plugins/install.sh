@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 RUST_PLUGIN_GIT="https://github.com/satelit-project/protoc-rust.git"
-RUST_PLUGIN_TAG="v0.1.0"
+RUST_PLUGIN_TAG="0.1.0"
 WORKING_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 TMP_DIR="$(mktemp -d)"
-trap 'rm -rf "${TMP}"' EXIT
+trap 'rm -rf "${TMP_DIR}"' EXIT
 
 cargo install protoc-rust \
   --git "${RUST_PLUGIN_GIT}" \
