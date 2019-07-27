@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package scraper;
+package data;
 
 // Anime episode
 message Episode {
@@ -27,11 +27,11 @@ message Anime {
   // External DB location
   message Source {
     // AniDB id
-    repeated sint32 anidb_id = 1;
+    repeated sint32 anidb_ids = 1;
     // MyAnimeList id
-    repeated sint32 mal_id = 2;
+    repeated sint32 mal_ids = 2;
     // AnimeNewsNetwork id
-    repeated sint32 ann_id = 3;
+    repeated sint32 ann_ids = 3;
   }
   // Type of an anime title
   enum Type {

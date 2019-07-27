@@ -2,17 +2,14 @@ syntax = "proto3";
 
 package scheduler;
 
+import "data/source.proto";
+
 // Asks to import anime titles index and schedule new titles for scraping
 message ImportIntent {
-  // External DB
-  enum Source {
-    UNKNOWN = 0;
-    ANIDB = 1;
-  }
   // Intent ID
   string id = 1;
   // Represents an external DB from where anime titles index should be imported
-  Source source = 2;
+  data.Source source = 2;
   // Identifiers of anime titles that should be re-imported
   repeated sint32 reimport_ids = 3;
   // URL to send request with import result

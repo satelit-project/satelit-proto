@@ -2,15 +2,12 @@ syntax = "proto3";
 
 package scraper;
 
+import "data/source.proto";
+
 // Asks to begin scraping process from specific source
 message ScrapeIntent {
-  // External DB
-  enum Source {
-    UNKNOWN = 0;
-    ANIDB = 1;
-  }
   // Intent ID
   string id = 1;
   // Indicator from where to scrape data
-  Source source = 2;
+  data.Source source = 2;
 }

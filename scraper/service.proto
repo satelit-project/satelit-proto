@@ -21,7 +21,7 @@ service ScraperService {
 // and it's expected to be implemented by 'Importer'.
 service ScraperTasksService {
   // Creates new scraping task and returns info about target to scrape
-  rpc CreateTask(google.protobuf.Empty) returns (Task);
+  rpc CreateTask(TaskCreate) returns (Task);
   // Reports that an atomic piece of data has been scraped
   rpc YieldResult(TaskYield) returns (google.protobuf.Empty);
   // Reports that scraping has finished and no more work will be done

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package data;
+
+// External data source
+enum Source {
+  UNKNOWN = 0;
+  ANIDB = 1;
+}
