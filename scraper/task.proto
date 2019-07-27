@@ -21,6 +21,8 @@ message Task {
 message TaskCreate {
   // Maximum number of entities to scrape
   sint32 limit = 1;
+  // External data source to scrape data from
+  data.Source source = 2;
 }
 
 // Intermediate result of a parse task
