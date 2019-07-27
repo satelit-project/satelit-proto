@@ -3,13 +3,14 @@
 set -euo pipefail
 
 RUST_PLUGIN_GIT="https://github.com/satelit-project/protoc-rust.git"
-RUST_PLUGIN_TAG="0.1.0"
+RUST_PLUGIN_TAG="0.1.1"
 WORKING_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "${TMP_DIR}"' EXIT
 
 cargo install protoc-rust \
+  --features "tower-hyper" \
   --git "${RUST_PLUGIN_GIT}" \
   --tag "${RUST_PLUGIN_TAG}" \
   --root "${WORKING_DIR}" \
