@@ -10,10 +10,12 @@ message ImportIntent {
   string id = 1;
   // Represents an external DB from where anime titles index should be imported
   data.Source source = 2;
+  // URL of anime titles dump location
+  string dump_url = 3;
   // Identifiers of anime titles that should be re-imported
-  repeated sint32 reimport_ids = 3;
+  repeated sint32 reimport_ids = 4;
   // URL to send request with import result
-  string callback_url = 4;
+  string callback_url = 5;
 }
 
 message ImportIntentResult {
