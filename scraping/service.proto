@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package scraper;
+package scraping;
 
 import "google/protobuf/empty.proto";
-import "scraper/intent.proto";
-import "scraper/task.proto";
+import "scraping/intent.proto";
+import "scraping/task.proto";
 
 // A service to start scraping process
 //
@@ -13,6 +13,15 @@ import "scraper/task.proto";
 service ScraperService {
   // Starts scraping process
   rpc StartScraping(ScrapeIntent) returns (google.protobuf.Empty);
+}
+
+// A service for receiving callbacks about scraping process
+//
+// 'Scheduler' should implement server side and 'Scraper' should
+// report about it's scraping progress.
+service ScraperHooksService {
+  // Reports that scraping process has been finished
+  rpc ScrapingFinished(ScrapeIntentResult) returns (google.protobuf.Empty);
 }
 
 // A service that manages creation/destruction of scraping tasks

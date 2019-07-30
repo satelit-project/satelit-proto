@@ -25,6 +25,11 @@ generate:
       path: plugins/bin/protoc-gen-rust
 
     - name: rust
+      output: ../satelit-scheduler/src/proto
+      flags: grpc,no-flat-modules
+      path: plugins/bin/protoc-gen-rust
+
+    - name: rust
       output: ../satelit-cli/src/proto
       flags: grpc,no-flat-modules
       path: plugins/bin/protoc-gen-rust

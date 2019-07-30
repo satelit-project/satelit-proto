@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package scraper;
+package scraping;
 
 import "data/anime.proto";
 import "data/source.proto";

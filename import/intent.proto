@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package scheduler;
+package import;
 
 import "data/source.proto";
 
