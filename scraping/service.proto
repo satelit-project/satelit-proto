@@ -11,17 +11,8 @@ import "scraping/task.proto";
 // 'Scraper' should implement a server side of the service and
 // something from the outside needs to trigger scraping process.
 service ScraperService {
-  // Starts scraping process
-  rpc StartScraping(ScrapeIntent) returns (google.protobuf.Empty);
-}
-
-// A service for receiving callbacks about scraping process
-//
-// 'Scheduler' should implement server side and 'Scraper' should
-// report about it's scraping progress.
-service ScraperHooksService {
-  // Reports that scraping process has been finished
-  rpc ScrapingFinished(ScrapeIntentResult) returns (google.protobuf.Empty);
+  // Starts web scraping and returns result of the operation when finished
+  rpc StartScraping(ScrapeIntent) returns (ScrapeIntentResult);
 }
 
 // A service that manages creation/destruction of scraping tasks
