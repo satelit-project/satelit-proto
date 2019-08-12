@@ -14,17 +14,11 @@ message ImportIntent {
   string dump_url = 3;
   // Identifiers of anime titles that should be re-imported
   repeated sint32 reimport_ids = 4;
-  // URL to send request with import result
-  string callback_url = 5;
 }
 
 message ImportIntentResult {
   // Intent ID
   string id = 1;
-  // If import succeeded then `true`, `false` otherwise
-  bool succeeded = 2;
   // IDs of anime titles that was not imported
-  repeated sint32 skipped_ids = 3;
-  // Description of the error if import failed
-  string error_description = 4;
+  repeated sint32 skipped_ids = 2;
 }
