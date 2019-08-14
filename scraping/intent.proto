@@ -11,13 +11,3 @@ message ScrapeIntent {
   // Indicator from where to scrape data
   data.Source source = 2;
 }
-
-// Result of scraping process
-message ScrapeIntentResult {
-  // Intent ID
-  string id = 1;
-  // Wherever scraping was successful
-  bool succeeded = 2;
-  // Error description if scraping was unsuccessful
-  string error_description = 3;
-}
