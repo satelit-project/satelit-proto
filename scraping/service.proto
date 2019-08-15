@@ -12,7 +12,7 @@ import "scraping/task.proto";
 // something from the outside needs to trigger scraping process.
 service ScraperService {
   // Starts web scraping and returns result of the operation when finished
-  rpc StartScraping(ScrapeIntent) returns (google.protobuf.Empty);
+  rpc StartScraping(ScrapeIntent) returns (ScrapeIntentResult);
 }
 
 // A service that manages creation/destruction of scraping tasks

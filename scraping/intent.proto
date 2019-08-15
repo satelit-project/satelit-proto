@@ -11,3 +11,10 @@ message ScrapeIntent {
   // Indicator from where to scrape data
   data.Source source = 2;
 }
+
+message ScrapeIntentResult {
+  // ID of an intent that was used to initiate data scraping
+  string id = 1;
+  // Wherever there's more data to scrape
+  bool may_continue = 2;
+}
