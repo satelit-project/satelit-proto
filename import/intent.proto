@@ -8,12 +8,14 @@ import "data/source.proto";
 message ImportIntent {
   // Intent ID
   string id = 1;
-  // Represents an external DB from where anime titles index should be imported
+  // External data source to which index files belongs to
   data.Source source = 2;
-  // URL of anime titles dump location
-  string dump_url = 3;
+  // URL of latest anime titles index
+  string new_index_url = 3;
+  // URL of previous anime titles index
+  string old_index_url = 4;
   // Identifiers of anime titles that should be re-imported
-  repeated sint32 reimport_ids = 4;
+  repeated sint32 reimport_ids = 5;
 }
 
 message ImportIntentResult {
