@@ -75,4 +75,8 @@ message Anime {
   double rating = 10;
   // Anime description
   string description = 11;
+  // Creation date in external DB
+  sint64 src_created_at = 12;
+  // Last update date in external DB
+  sint64 src_updated_at = 13;
 }
