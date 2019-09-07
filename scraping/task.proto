@@ -2,19 +2,26 @@ syntax = "proto3";
 
 package scraping;
 
+import "common/uuid.proto";
 import "data/anime.proto";
 import "data/source.proto";
 
 // Represents a task for anime pages scraping
 message Task {
   // Task ID
-  string id = 1;
+  uuid.UUID id = 1;
   // External DB from where to scrape info
   data.Source source = 2;
-  // Schedule IDs for each anime ID
-  repeated sint32 schedule_ids = 3;
-  // Anime ID's to scrape
-  repeated sint32 anime_ids = 4;
+  // Scraping jobs
+  repeated Job jobs = 3;
+}
+
+// Represents a single scraping job for an anime page
+message Job {
+  // Job ID
+  uuid.UUID id = 1;
+  // Anime ID
+  sint32 anime_id = 2;
 }
 
 // Scrape task creation request
@@ -28,9 +35,9 @@ message TaskCreate {
 // Intermediate result of a parse task
 message TaskYield {
   // ID of the related task
-  string task_id = 1;
-  // ID of the schedule
-  sint32 schedule_id = 2;
+  uuid.UUID task_id = 1;
+  // ID of the related job
+  uuid.UUID job_id = 2;
   // Parsed anime entity
   data.Anime anime = 3;
 }

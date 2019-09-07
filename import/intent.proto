@@ -2,12 +2,13 @@ syntax = "proto3";
 
 package import;
 
+import "common/uuid.proto";
 import "data/source.proto";
 
 // Asks to import anime titles index and schedule new titles for scraping
 message ImportIntent {
   // Intent ID
-  string id = 1;
+  uuid.UUID id = 1;
   // External data source to which index files belongs to
   data.Source source = 2;
   // URL of latest anime titles index
@@ -20,7 +21,7 @@ message ImportIntent {
 
 message ImportIntentResult {
   // Intent ID
-  string id = 1;
+  uuid.UUID id = 1;
   // IDs of anime titles that was not imported
   repeated sint32 skipped_ids = 2;
 }

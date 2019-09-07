@@ -2,19 +2,20 @@ syntax = "proto3";
 
 package scraping;
 
+import "common/uuid.proto";
 import "data/source.proto";
 
 // Asks to begin scraping process from specific source
 message ScrapeIntent {
   // Intent ID
-  string id = 1;
+  uuid.UUID id = 1;
   // Indicator from where to scrape data
   data.Source source = 2;
 }
 
 message ScrapeIntentResult {
   // ID of an intent that was used to initiate data scraping
-  string id = 1;
+  uuid.UUID id = 1;
   // Wherever there's more data to scrape
   bool may_continue = 2;
 }

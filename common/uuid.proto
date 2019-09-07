@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package uuid;
+
+// Representation of UUID type
+message UUID {
+  bytes uuid = 1;
+}
