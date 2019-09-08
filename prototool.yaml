@@ -21,18 +21,15 @@ generate:
 
     - name: rust
       output: ../satelit-import/src/proto
-      flags: grpc,no-flat-modules,extern_path=.uuid.UUID=::uuid::Uuid
+      flags: grpc,no-flat-modules
       path: plugins/bin/protoc-gen-rust
-      untied_flags_passing: true
 
     - name: rust
       output: ../satelit-scheduler/src/proto
-      flags: grpc,no-flat-modules,extern_path=.uuid.UUID=::uuid::Uuid
+      flags: grpc,no-flat-modules
       path: plugins/bin/protoc-gen-rust
-      untied_flags_passing: true
 
     - name: rust
       output: ../satelit-cli/src/proto
-      flags: grpc,no-flat-modules,extern_path=.uuid.UUID=::uuid::Uuid
+      flags: grpc,no-flat-modules
       path: plugins/bin/protoc-gen-rust
-      untied_flags_passing: true
