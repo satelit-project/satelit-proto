@@ -45,5 +45,5 @@ message TaskYield {
 // Signals that a task has been finished
 message TaskFinish {
   // ID of the related task
-  string task_id = 1;
+  uuid.UUID task_id = 1;
 }
