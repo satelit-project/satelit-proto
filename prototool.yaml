@@ -22,14 +22,17 @@ generate:
     - name: rust
       output: ../satelit-import/src/proto
       flags: grpc,no-flat-modules
+      untied_flags: true
       path: plugins/bin/protoc-gen-rust
 
     - name: rust
       output: ../satelit-scheduler/src/proto
       flags: grpc,no-flat-modules
+      untied_flags: true
       path: plugins/bin/protoc-gen-rust
 
     - name: rust
       output: ../satelit-cli/src/proto
       flags: grpc,no-flat-modules
+      untied_flags: true
       path: plugins/bin/protoc-gen-rust
