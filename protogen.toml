@@ -1,0 +1,21 @@
+[protoc]
+version = "3.7.1"
+
+exclude = [
+  ".git",
+  ".idea",
+  "plugins",
+]
+
+[[plugins]]
+name = "rust"
+output = "../satelit-import/src/proto"
+options = "grpc,no-flat-modules"
+path = "plugins/bin/protoc-gen-rust"
+
+[[plugins]]
+name = "rust"
+output = "../satelit-scheduler/src/proto"
+options = "grpc,no-flat-modules"
+path = "plugins/bin/protoc-gen-rust"
+
