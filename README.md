@@ -5,14 +5,10 @@ Proto files for all **Satelit** projects and sources generator.
 ## Dependencies
 
 - Rust (latest _stable_)
-- Go (_1.12+_)
-- [`prototool`](https://github.com/uber/prototool)
+- Go (_1.13+_)
+- [`protogen`](https://github.com/satelit-project/protogen)
 
 ## Usage
 
-- Install Protobuf by running `prototool cache update`
-- Install `protoc` plugins by running `./plugins/install`
+Install plugins by running `plugins/install.sh` and then generate protos by running `protogen`
 
-See `prototool --help` for what you can do.
-
-For example, if you want to regenerate protos, simply run `prototool generate`

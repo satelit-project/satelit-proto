@@ -7,11 +7,11 @@ exclude = [
   "plugins",
 ]
 
-#[[plugins]]
-#name = "rust"
-#output = "../satelit-import/src/proto"
-#options = "grpc,no-flat-modules"
-#path = "plugins/bin/protoc-gen-rust"
+[[plugins]]
+name = "rust"
+output = "../satelit-import/src/proto"
+options = "grpc,no-flat-modules"
+path = "plugins/bin/protoc-gen-rust"
 
 [[plugins]]
 name = "go"
@@ -19,9 +19,9 @@ output = "../satelit-scraper/proto"
 options = "plugins=grpc"
 path = "plugins/bin/protoc-gen-go"
 
-#[[plugins]]
-#name = "rust"
-#output = "../satelit-scheduler/src/proto"
-#options = "grpc,no-flat-modules"
-#path = "plugins/bin/protoc-gen-rust"
+[[plugins]]
+name = "rust"
+output = "../satelit-scheduler/src/proto"
+options = "grpc,no-flat-modules"
+path = "plugins/bin/protoc-gen-rust"
 
