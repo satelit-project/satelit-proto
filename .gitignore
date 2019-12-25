@@ -9,3 +9,7 @@ protogen/**/*.iml
 # Cargo
 plugins/bin
 plugins/.crates.toml
+
+tools/.crates.toml
+tools/bin/
+tools/bin/
