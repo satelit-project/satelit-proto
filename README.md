@@ -4,11 +4,14 @@ Proto files for all **Satelit** projects and sources generator.
 
 ## Dependencies
 
-- Rust (latest _stable_)
-- Go (_1.13+_)
-- [`protogen`](https://github.com/satelit-project/protogen)
+- Rust stable
+- Go 1.13
+- Fish
+
+### Plugins
+
+Required protoc plugins and [`protogen`](https://github.com/satelit-project/protogen) can be installed by running [`tools/deps.fish`](tools/deps.fish).
 
 ## Usage
 
-Install plugins by running `plugins/install.sh` and then generate protos by running `protogen`
-
+Clone [satelit-import](https://github.com/satelit-project/satelit-import), [satelit-scheduler](https://github.com/satelit-project/satelit-scheduler) and [satelit-scraper](https://github.com/satelit-project/satelit-scraper) to parent (`..`) directory and run `protogen`.
