@@ -97,7 +97,8 @@ function install_gen_rust -a forced
   echo "Installing protoc-gen-rust" >&2
   cargo install -q protoc-rust \
       --git https://github.com/satelit-project/protoc-rust \
-      --tag (latest_tag satelit-project/protoc-rust) \
+      # --tag (latest_tag satelit-project/protoc-rust) \
+      --tag 0.2.0-beta.1 \
       --root $WORK_DIR \
       --force
 
