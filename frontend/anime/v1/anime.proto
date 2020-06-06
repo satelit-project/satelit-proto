@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package anime.v1;
+
+// Known anime types.
+enum AnimeType {
+  UNKNOWN = 0;
+  TV = 1;
+  OVA = 2;
+  ONA = 3;
+  MOVIE = 4;
+  SPECIAL = 5;
+}
+
+// Represents anime genre.
+//
+// Default locale is en-US.
+message AnimeGenre {
+  // Genre identifier.
+  uint64 id = 1;
+  // Genre name.
+  string name = 2;
+  // Genre description.
+  string description = 3;
+}
+
+// Airing status of a single anime show.
+enum AiringStatus {
+  UNKNOWN = 0;
+  UNAIRED = 1;
+  AIRING = 2;
+  AIRED = 3;
+}
+
+// Name of the season when an anime show started airing.
+enum AiringSeason {
+  UNKNOWN = 0;
+  SUMMER = 1;
+  FALL = 2;
+  WINTER = 3;
+  SPRING = 4;
+}
+
+// Represents a single anime show.
+//
+// Default locale is en-US.
+message Anime {
+  // Show's identifier.
+  uint64 id = 1;
+  // Name of the show in romanji.
+  string name = 2;
+  // URL of the poster.
+  string poster_url = 3;
+  // URL of the poster thumbnail.
+  string thumbnail_url = 4;
+  // Type of the show.
+  AnimeType type = 5;
+  // Airing season.
+  AiringSeason season = 6;
+  // Airing status.
+  AiringStatus airing_status = 7;
+  // Timestamp of when the show started airing.
+  uint64 start_airing_date = 8;
+  // Timestamp of when the show ended airing.
+  uint64 end_airing_date = 9;
+  // Score from 0 to 10.
+  float score = 10;
+  // List of the show's genres.
+  repeated AnimeGenre genres = 11;
+  // Descriptions of the show.
+  string description = 12;
+}

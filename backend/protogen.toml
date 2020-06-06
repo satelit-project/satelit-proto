@@ -1,27 +1,24 @@
 [protoc]
-version = "3.7.1"
+version = "3.12.3"
 
 exclude = [
-  ".git",
-  ".idea",
   "tools",
 ]
 
 [[plugins]]
 name = "rust"
-output = "../satelit-import/src/proto"
+output = "../../satelit-import/src/proto"
 options = "grpc,no-flat-modules"
 path = "tools/bin/protoc-gen-rust"
 
 [[plugins]]
 name = "go"
-output = "../satelit-scraper/proto"
+output = "../../satelit-scraper/proto"
 options = "plugins=grpc"
 path = "tools/bin/protoc-gen-go"
 
 [[plugins]]
 name = "rust"
-output = "../satelit-scheduler/src/proto"
+output = "../../satelit-scheduler/src/proto"
 options = "grpc,no-flat-modules"
 path = "tools/bin/protoc-gen-rust"
-
