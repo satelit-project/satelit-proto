@@ -1,0 +1,18 @@
+[protoc]
+version = "3.12.3"
+
+exclude = [
+  "tools",
+]
+
+[[plugins]]
+name = "swift"
+output = "../../satelit-ios/Proto/Sources/Proto"
+options = "Visibility=Public"
+path = "tools/bin/protoc-gen-swift"
+
+[[plugins]]
+name = "grpc-swift"
+output = "../../satelit-ios/Proto/Sources/Proto"
+options = "Server=false,Visibility=Public"
+path = "tools/bin/protoc-gen-grpc-swift"
