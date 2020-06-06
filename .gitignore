@@ -10,6 +10,6 @@ protogen/**/*.iml
 plugins/bin
 plugins/.crates.toml
 
-tools/.crates.toml
-tools/bin/
-tools/bin/
+*/tools/.*.toml
+*/tools/.*.json
+*/tools/bin
