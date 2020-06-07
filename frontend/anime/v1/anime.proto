@@ -4,11 +4,12 @@ package anime.v1;
 
 // Known anime types.
 enum AnimeType {
-  ANIME_TYPE_TV = 0;
-  ANIME_TYPE_OVA = 1;
-  ANIME_TYPE_ONA = 2;
-  ANIME_TYPE_MOVIE = 3;
-  ANIME_TYPE_SPECIAL = 4;
+  ANIME_TYPE_UNKNOWN = 0;
+  ANIME_TYPE_TV = 1;
+  ANIME_TYPE_OVA = 2;
+  ANIME_TYPE_ONA = 3;
+  ANIME_TYPE_MOVIE = 4;
+  ANIME_TYPE_SPECIAL = 5;
 }
 
 // Represents anime genre.
@@ -25,17 +26,19 @@ message AnimeGenre {
 
 // Airing status of a single anime show.
 enum AiringStatus {
-  AIRING_STATUS_UNAIRED = 0;
-  AIRING_STATUS_AIRING = 1;
-  AIRING_STATUS_AIRED = 2;
+  AIRING_STATUS_UNKNOWN = 0;
+  AIRING_STATUS_UNAIRED = 1;
+  AIRING_STATUS_AIRING = 2;
+  AIRING_STATUS_AIRED = 3;
 }
 
 // Name of the season when an anime show started airing.
 enum AiringSeason {
-  AIRING_SEASON_SUMMER = 0;
-  AIRING_SEASON_FALL = 1;
-  AIRING_SEASON_WINTER = 2;
-  AIRING_SEASON_SPRING = 3;
+  AIRING_SEASON_UNKNOWN = 0;
+  AIRING_SEASON_SUMMER = 1;
+  AIRING_SEASON_FALL = 2;
+  AIRING_SEASON_WINTER = 3;
+  AIRING_SEASON_SPRING = 4;
 }
 
 // Represents a single anime show.
