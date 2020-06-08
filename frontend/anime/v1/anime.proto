@@ -1,5 +1,4 @@
 syntax = "proto3";
-
 package anime.v1;
 
 // Known anime types.
@@ -53,12 +52,10 @@ message Anime {
   AnimeType type = 4;
   // Airing season.
   AiringSeason season = 5;
+  // Airing season year,
+  sint32 year = 6;
   // Airing status.
-  AiringStatus airing_status = 6;
-  // Timestamp of when the show started airing.
-  uint64 start_airing_date = 7;
-  // Timestamp of when the show ended airing.
-  uint64 end_airing_date = 8;
+  AiringStatus airing_status = 7;
   // Score from 0 to 10.
-  float score = 9;
+  float score = 8;
 }
