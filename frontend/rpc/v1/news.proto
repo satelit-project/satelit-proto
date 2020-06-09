@@ -15,7 +15,7 @@ message LatestNewsResponse {
 }
 
 // A service to fetch anime news.
-service LatestNewsService {
+service NewsService {
     // Fetches and returns a list of latest anime news.
     rpc LatestNews (LatestNewsRequest) returns (LatestNewsResponse);
 }
