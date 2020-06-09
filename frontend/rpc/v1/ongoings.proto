@@ -1,20 +1,20 @@
 syntax = "proto3";
-package anime.v1;
+package rpc.v1;
 
-import "anime/v1/anime.proto";
+import "data/v1/anime.proto";
 
 // Request to fetch anime ongoings.
 message OngoingsRequest {}
 
 // Response with anime ongoings;
 message OngoingsResponse {
-    repeated anime.v1.Anime ongoings = 1;
+    repeated data.v1.Anime ongoings = 1;
 }
 
 // Service to fetch currently airing anime shows.
-service AnimeOngoings {
+service AnimeOngoingsService {
     // Returns list of currently airing anime shows.
     //
     // The list is sorted by how much time left until next episode.
-    rpc ongoings (OngoingsRequest) returns (OngoingsResponse);
+    rpc Ongoings (OngoingsRequest) returns (OngoingsResponse);
 }

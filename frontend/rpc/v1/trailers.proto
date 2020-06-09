@@ -1,0 +1,19 @@
+syntax = "proto3";
+package rpc.v1;
+
+import "data/v1/trailer.proto";
+
+// A request to fetch featured anime trailers.
+message FeaturedTrailersRequest { }
+
+// A response with a list of featured anime trailers.
+message FeaturedTrailersResponse {
+    // List of anime trailers.
+    repeated data.v1.Trailer trailers = 1;
+}
+
+// A service to fetch anime trailers.
+service TrailersService {
+    // Requests and returns a list of featured anime trailers.
+    rpc FeaturedTrailers (FeaturedTrailersRequest) returns (FeaturedTrailersResponse);
+}

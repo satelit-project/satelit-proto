@@ -1,0 +1,18 @@
+syntax = "proto3";
+package data.v1;
+
+// Represents a news article.
+message Article {
+    // Name of the article's source.
+    string source = 1;
+    // Unix timestamp when the article was posted.
+    double timestamp = 2;
+    // Number of likes.
+    sint64 likes = 3;
+    // Title of the article.
+    string title = 4;
+    // A short summary of the article.
+    string summary = 5;
+    // URL to the source article.
+    string source_url = 6;
+}

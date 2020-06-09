@@ -1,5 +1,5 @@
 syntax = "proto3";
-package anime.v1;
+package data.v1;
 
 // Known anime types.
 enum AnimeType {

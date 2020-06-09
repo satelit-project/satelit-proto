@@ -1,0 +1,12 @@
+syntax = "proto3";
+package data.v1;
+
+import "data/v1/anime.proto";
+
+// Represents a single anime trailer.
+message Trailer {
+    // The anime the trailer is related to.
+    data.v1.Anime anime = 1;
+    // URL of the video stream.
+    string video_url = 2;
+}

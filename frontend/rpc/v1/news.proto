@@ -1,0 +1,21 @@
+syntax = "proto3";
+package rpc.v1;
+
+import "data/v1/article.proto";
+
+// A request to fetch anime news.
+message LatestNewsRequest {}
+
+// A response with anime news.
+message LatestNewsResponse {
+    // A list of recent anime news.
+    //
+    // The list is sorted from the recent one to the oldest one.
+    repeated data.v1.Article articles = 1;
+}
+
+// A service to fetch anime news.
+service LatestNewsService {
+    // Fetches and returns a list of latest anime news.
+    rpc LatestNews (LatestNewsRequest) returns (LatestNewsResponse);
+}
